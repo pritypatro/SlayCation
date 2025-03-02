@@ -50,31 +50,34 @@
             color: #800040;
             font-size: 18px;
         }
-  /* Section Styling */
-#makeup, #skincare, #haircare {
-    background-color: white;
-    padding: 20px;
-    margin: 30px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-h2 {
-    color: #ff4da6;
-}
-a {
-    display: inline-block;
-    background-color: #ff4da6;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-a:hover {
-    background-color: #800040;
-}
-  </style>
+
+        /* Section Styling */
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin: 30px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff4da6;
+        }
+
+        a.button {
+            display: inline-block;
+            background-color: #ff4da6;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        a.button:hover {
+            background-color: #800040;
+        }
+    </style>
 </head>
 <body>
 
@@ -89,28 +92,29 @@ a:hover {
     <div class="content">
         <h1>Welcome to SlayCation 💖</h1>
         <p>Your go-to beauty blog for Makeup, Skincare & Haircare! ✨</p>
+
         <!-- Makeup Section -->
-<div id="makeup">
-    <h2>✨ Makeup Reviews & Tips ✨</h2>
-    <p>Find the best makeup products, reviews, and tutorials to keep your glam on point! 💄</p>
-    <a href="https://www.nykaa.com/makeup/c/8377" target="_blank">Shop Makeup Products</a>
-</div>
+        <div id="makeup" class="section">
+            <h2>✨ Makeup Reviews & Tips ✨</h2>
+            <p>Find the best makeup products, reviews, and tutorials to keep your glam on point! 💄</p>
+            <a href="https://www.nykaa.com/makeup/c/8377" target="_blank" class="button">Shop Makeup Products</a>
+        </div>
 
-<!-- Skincare Section -->
-<div id="skincare">
-    <h2>💖 Skincare Essentials 💖</h2>
-    <p>Get glowing skin with these skincare must-haves and expert tips! 🌿</p>
-    <a href="https://www.nykaa.com/skincare/c/8378" target="_blank">Shop Skincare Products</a>
-</div>
+        <!-- Skincare Section -->
+        <div id="skincare" class="section">
+            <h2>💖 Skincare Essentials 💖</h2>
+            <p>Get glowing skin with these skincare must-haves and expert tips! 🌿</p>
+            <a href="https://www.nykaa.com/skincare/c/8378" target="_blank" class="button">Shop Skincare Products</a>
+        </div>
 
-<!-- Haircare Section -->
-<div id="haircare">
-    <h2>💆‍♀️ Haircare Hacks & Products 💆‍♀️</h2>
-    <p>Discover the best haircare products and styling tips for healthy, gorgeous hair! ✨</p>
-    <a href="https://www.nykaa.com/hair-care/c/8379" target="_blank">Shop Haircare Products</a>
-</div>
-
+        <!-- Haircare Section -->
+        <div id="haircare" class="section">
+            <h2>💆‍♀️ Haircare Hacks & Products 💆‍♀️</h2>
+            <p>Discover the best haircare products and styling tips for healthy, gorgeous hair! ✨</p>
+            <a href="https://www.nykaa.com/hair-care/c/8379" target="_blank" class="button">Shop Haircare Products</a>
+        </div>
     </div>
 
 </body>
 </html>
+
