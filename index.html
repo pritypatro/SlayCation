@@ -3,119 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlayCation - Beauty Blog</title>
+    <title>Beauty Routine Planner</title>
     <style>
-        /* Overall Page Styling */
-        body {
-            background-color: #ffe6f2; /* Soft baby pink */
-            font-family: Arial, sans-serif;
-            text-align: center;
+        /* Reset some default styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Title Styling */
-        h1 {
-            color: #ff4da6; /* Hot pink color */
-            font-size: 60px; /* Makes the title bigger */
-            font-family: 'Cursive', sans-serif; /* Adds a curvy font */
-            font-weight: bold; /* Makes it bold */
-            letter-spacing: 3px; /* Adds space between letters for effect */
-            margin-top: 100px; /* Adds some space on top for better view */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds shadow to make it pop */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f0f0;
+            color: #333;
+            text-align: center;
         }
 
-        p {
-            color: #800040;
-            font-size: 18px;
-        }
-
-        /* Section Styling */
-        .section {
-            background-color: white;
+        header {
+            background-color: #f1c6d4;
             padding: 20px;
-            margin: 30px auto;
-            width: 80%;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #d27394;
+        }
+
+        .container {
+            margin: 20px;
         }
 
         h2 {
-            color: #ff4da6;
+            color: #d27394;
         }
 
-        img {
-            border-radius: 10px;
-            margin-bottom: 10px;
-            width: 100%;
+        form {
+            margin: 20px 0;
         }
 
-        a.button {
-            display: inline-block;
-            background-color: #ff4da6;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
+        label {
+            font-size: 1.2rem;
+            display: block;
+            margin: 10px 0;
+        }
+
+        select, input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            margin-top: 10px;
-        }
-        a.button:hover {
-            background-color: #800040;
         }
 
-        /* Footer Styling */
-        .footer {
-            background-color: #ff4da6;
+        button {
+            padding: 10px 20px;
+            background-color: #d27394;
             color: white;
-            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f1c6d4;
+        }
+
+        #product-recommendations {
             margin-top: 30px;
         }
-        .footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+
+        #recommendations-list {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Personalized Beauty Routine Planner</h1>
+    </header>
 
-    <!-- Page Content -->
-    <div class="content">
-        <h1>Welcome to SlayCation 💖</h1>
-        <p>Your go-to beauty blog for Makeup, Skincare & Haircare! ✨</p>
+    <div class="container">
+        <!-- User Profile Section -->
+        <section id="user-profile">
+            <h2>Your Profile</h2>
+            <form id="profile-form">
+                <label for="skin-type">Skin Type:</label>
+                <select id="skin-type" required>
+                    <option value="oily">Oily</option>
+                    <option value="dry">Dry</option>
+                    <option value="combination">Combination</option>
+                </select>
 
-        <!-- Makeup Section -->
-        <div id="makeup" class="section">
-            <h2>✨ Makeup Reviews & Tips ✨</h2>
-            <img src="https://source.unsplash.com/600x400/?makeup" alt="Makeup Image">
-            <p>Find the best makeup products, reviews, and tutorials to keep your glam on point! 💄</p>
-            <a href="https://www.nykaa.com/makeup/c/8377" target="_blank" class="button">Shop Makeup Products</a>
-        </div>
+                <label for="product-preference">Product Preference:</label>
+                <select id="product-preference" required>
+                    <option value="natural">Natural Products</option>
+                    <option value="branded">Specific Brands</option>
+                </select>
 
-        <!-- Skincare Section -->
-        <div id="skincare" class="section">
-            <h2>💖 Skincare Essentials 💖</h2>
-            <img src="https://source.unsplash.com/600x400/?skincare" alt="Skincare Image">
-            <p>Get glowing skin with these skincare must-haves and expert tips! 🌿</p>
-            <a href="https://www.nykaa.com/skincare/c/8378" target="_blank" class="button">Shop Skincare Products</a>
-        </div>
+                <button type="submit">Save Profile</button>
+            </form>
+        </section>
 
-        <!-- Haircare Section -->
-        <div id="haircare" class="section">
-            <h2>💆‍♀️ Haircare Hacks & Products 💆‍♀️</h2>
-            <img src="https://source.unsplash.com/600x400/?haircare" alt="Haircare Image">
-            <p>Discover the best haircare products and styling tips for healthy, gorgeous hair! ✨</p>
-            <a href="https://www.nykaa.com/hair-care/c/8379" target="_blank" class="button">Shop Haircare Products</a>
-        </div>
+        <!-- Routine Builder Section -->
+        <section id="routine-builder">
+            <h2>Create Your Skincare Routine</h2>
+            <form id="routine-form">
+                <label for="morning-routine">Morning Routine:</label>
+                <input type="text" id="morning-routine" placeholder="e.g., Cleanser, Toner, Moisturizer" required>
+                <label for="night-routine">Night Routine:</label>
+                <input type="text" id="night-routine" placeholder="e.g., Cleanser, Serum, Moisturizer" required>
+                <button type="submit">Save Routine</button>
+            </form>
+        </section>
+
+        <!-- Product Recommendations Section -->
+        <section id="product-recommendations">
+            <h2>Recommended Products</h2>
+            <div id="recommendations-list">
+                <!-- Recommendations will appear here -->
+            </div>
+        </section>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>💖 Follow us on <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
-    </div>
+    <script>
+        document.getElementById("profile-form").addEventListener("submit", function (event) {
+            event.preventDefault();
 
+            // Get profile data
+            const skinType = document.getElementById("skin-type").value;
+            const productPreference = document.getElementById("product-preference").value;
+
+            // Save profile info to localStorage (so it's saved even when the page reloads)
+            localStorage.setItem("skinType", skinType);
+            localStorage.setItem("productPreference", productPreference);
+
+            // Show a success message
+            alert("Profile saved! Now, let's create your routine.");
+        });
+
+        document.getElementById("routine-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get routine data
+            const morningRoutine = document.getElementById("morning-routine").value;
+            const nightRoutine = document.getElementById("night-routine").value;
+
+            // Save the routine data to localStorage
+            localStorage.setItem("morningRoutine", morningRoutine);
+            localStorage.setItem("nightRoutine", nightRoutine);
+
+            // Show the user's routine
+            displayRoutine();
+            recommendProducts();
+        });
+
+        function displayRoutine() {
+            const morningRoutine = localStorage.getItem("morningRoutine");
+            const nightRoutine = localStorage.getItem("nightRoutine");
+
+            const routineDiv = document.getElementById("product-recommendations");
+            routineDiv.innerHTML += `<h3>Your Routine</h3>
+                                     <p><strong>Morning Routine:</strong> ${morningRoutine}</p>
+                                     <p><strong>Night Routine:</strong> ${nightRoutine}</p>`;
+        }
+
+        function recommendProducts() {
+            const skinType = localStorage.getItem("skinType");
+            const productPreference = localStorage.getItem("productPreference");
+
+            const recommendationsList = document.getElementById("recommendations-list");
+            
+            // You can add more complex recommendations logic here
+            let recommendations = [];
+
+            if (skinType === "oily") {
+                recommendations.push("Oil-Free Cleanser", "Mattifying Moisturizer");
+            } else if (skinType === "dry") {
+                recommendations.push("Hydrating Cleanser", "Moisturizing Cream");
+            } else {
+                recommendations.push("Gentle Cleanser", "Balancing Serum");
+            }
+
+            if (productPreference === "natural") {
+                recommendations.push("Organic Face Oil", "Herbal Mask");
+            }
+
+            recommendationsList.innerHTML = recommendations.map(product => `<p>${product}</p>`).join("");
+        }
+    </script>
 </body>
 </html>
+
 
 
 
