@@ -75,6 +75,20 @@
         #recommendations-list {
             margin-top: 10px;
         }
+
+        .recommendation {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+
+        .routine-details {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1e1e1;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -123,9 +137,18 @@
                 <!-- Recommendations will appear here -->
             </div>
         </section>
+
+        <!-- Display Routine Details -->
+        <section id="routine-details">
+            <h2>Your Saved Routine</h2>
+            <div id="saved-routine">
+                <!-- Saved routine details will be displayed here -->
+            </div>
+        </section>
     </div>
 
     <script>
+        // Save profile information
         document.getElementById("profile-form").addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -133,7 +156,7 @@
             const skinType = document.getElementById("skin-type").value;
             const productPreference = document.getElementById("product-preference").value;
 
-            // Save profile info to localStorage (so it's saved even when the page reloads)
+            // Save profile info to localStorage
             localStorage.setItem("skinType", skinType);
             localStorage.setItem("productPreference", productPreference);
 
@@ -141,6 +164,7 @@
             alert("Profile saved! Now, let's create your routine.");
         });
 
+        // Save routine and display
         document.getElementById("routine-form").addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -152,28 +176,28 @@
             localStorage.setItem("morningRoutine", morningRoutine);
             localStorage.setItem("nightRoutine", nightRoutine);
 
-            // Show the user's routine
+            // Display routine and recommendations
             displayRoutine();
             recommendProducts();
         });
 
+        // Display the saved routine
         function displayRoutine() {
             const morningRoutine = localStorage.getItem("morningRoutine");
             const nightRoutine = localStorage.getItem("nightRoutine");
 
-            const routineDiv = document.getElementById("product-recommendations");
-            routineDiv.innerHTML += `<h3>Your Routine</h3>
-                                     <p><strong>Morning Routine:</strong> ${morningRoutine}</p>
-                                     <p><strong>Night Routine:</strong> ${nightRoutine}</p>`;
+            const routineDiv = document.getElementById("saved-routine");
+            routineDiv.innerHTML = `<p><strong>Morning Routine:</strong> ${morningRoutine}</p>
+                                    <p><strong>Night Routine:</strong> ${nightRoutine}</p>`;
         }
 
+        // Show product recommendations based on profile and skin type
         function recommendProducts() {
             const skinType = localStorage.getItem("skinType");
             const productPreference = localStorage.getItem("productPreference");
 
             const recommendationsList = document.getElementById("recommendations-list");
             
-            // You can add more complex recommendations logic here
             let recommendations = [];
 
             if (skinType === "oily") {
@@ -188,11 +212,14 @@
                 recommendations.push("Organic Face Oil", "Herbal Mask");
             }
 
-            recommendationsList.innerHTML = recommendations.map(product => `<p>${product}</p>`).join("");
+            // Display recommendations
+            recommendationsList.innerHTML = recommendations.map(product => 
+                `<div class="recommendation">${product}</div>`).join("");
         }
     </script>
 </body>
 </html>
+
 
 
 
